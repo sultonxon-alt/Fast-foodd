@@ -13,14 +13,25 @@ header {
     font-size: 1.5em;
 }
 
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav .logo {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
 nav ul {
     list-style: none;
     padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
 nav ul li a {
@@ -32,9 +43,8 @@ nav ul li a {
 
 .hero {
     text-align: center;
-    padding: 200px;
-    background: url('image/fast\ food.avif') no-repeat center center/cover;
-    background-size: 100% auto;
+    padding: 100px 20px;
+    background: url('image/fast food.avif') no-repeat center center/cover;
     color: white;
     font-size: 2em;
 }
@@ -48,26 +58,14 @@ nav ul li a {
     font-weight: bold;
     border-radius: 10px;
     font-size: 1.5em;
-    border: 2px white;
+    margin-top: 20px;
 }
 
 .menu-container {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    padding: 100px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-
-.menu-item button {
-    width: 150px;
-    height: 50px;
-    background-color: #ff6600;
-    border-radius: 20px;
-    color: #f8f8f8;
-    font-size: 20px;
-    font-family: sans-serif;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    padding: 50px 20px;
 }
 
 .menu-item {
@@ -76,26 +74,48 @@ nav ul li a {
     border-radius: 20px;
     text-align: center;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    font-size: 1.5em;
-
-
+    font-size: 1.2em;
 }
 
 .menu-item img {
-    width: 200px;
-    height: 200px;
-    border-radius: 2%;
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 10px;
 }
 
-.menu h2 {
+.menu-item button {
+    width: 100%;
+    max-width: 150px;
+    height: 50px;
+    background-color: #ff6600;
+    border-radius: 20px;
+    color: #f8f8f8;
+    font-size: 18px;
+    margin-top: 10px;
+    border: none;
+}
+
+.menu h2,
+.about h2,
+.contact h2 {
     text-align: center;
     font-size: 32px;
     font-family: sans-serif;
-    padding-top: 20px;
+    margin-top: 40px;
 }
 
-.contact {
-    font-family: sans-serif;
+.about, .contact {
+    padding: 20px;
+    text-align: center;
+}
+
+.contact a {
+    display: block;
+    margin: 10px 0;
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
 }
 
 footer {
@@ -106,101 +126,20 @@ footer {
     font-size: 1.2em;
 }
 
+/* 🔻 MOSLASHUVCHANLIK UCHUN MEDIA QUERIES */
+@media (max-width: 768px) {
+    .hero {
+        font-size: 1.5em;
+        padding: 80px 20px;
+    }
 
-@media screen and (max-width: 480px) {
-  
-    header {
-        padding: 15px;
+    .btn {
         font-size: 1.2em;
-        text-align: center;
+        padding: 15px 30px;
     }
 
     nav ul {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        gap: 1px;
-        padding: 10px 0;
-    }
-     
-    nav ul li {
-        display: block;
-    }
-
-    nav ul li a {
-        font-size: 1em;
-        padding: 8px 12px;
-        background-color: white;
-        color: #ff6600;
-        border-radius: 5px;
-        text-decoration: none;
-
-    }
-
-   
-    .hero {
-        padding: 80px 20px;
-        font-size: 1.2em;
-        text-align: center;
-        background-size: cover;
-    }
-
-    .menu-container {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 20px;
-        padding: 30px 10px;
-    }
-
-    .menu-item {
-        width: 100%;
-        max-width: 400px;
-        margin: 0 auto;
-        background: white;
-        padding: 20px;
-        border-radius: 10px;
-        text-align: center;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        font-size: 1.1em;
-    }
-
-    .menu-item img {
-        width: 90%;
-        height: auto;
-        border-radius: 10px;
-    }
-
-    .menu-item h3 {
-        font-size: 1.2em;
-        margin: 10px 0;
-    }
-
-    .menu-item p {
-        font-size: 1em;
-        color: gray;
-    }
-
-    .menu-item button {
-        width: 70%;
-        padding: 10px;
-        font-size: 1em;
-        background-color: #ff6600;
-        color: white;
-        border-radius: 10px;
-        border: none;
-        cursor: pointer;
-    }
-
-    footer {
-        text-align: center;
-        padding: 20px;
-        background-color: #333;
-        color: white;
-        font-size: 1em;
-    }
-    .contact a{
-        color: gray;
-        text-decoration: none;
-        font-size: 1.2em;
+        flex-direction: column;
+        gap: 10px;
     }
 }
